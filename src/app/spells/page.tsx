@@ -25,7 +25,9 @@ export default async function Spells() {
 							key={spell.index}
 							className='spellBox flex flex-col p-2 items-center'>
 							<Spell index={spell.index} />
-							<span className='text-center'> {spell.name}</span>
+							<span className='text-center text-yellow-200 font-semibold'>
+								{spell.name}
+							</span>
 						</li>
 					);
 				})}
