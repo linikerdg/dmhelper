@@ -8,8 +8,13 @@
     border-2
     border-amber-600;
 
-	@apply min-h-[10em];
+	@apply h-48 w-48;
 }
 .spellBox:hover {
 	@apply border-amber-400;
+}
+
+.spellModal {
+	@apply bg-gradient-to-br from-yellow-900 via-amber-700 to-yellow-900;
+	@apply outline outline-2 outline-yellow-400 outline-offset-[-1em];
 }

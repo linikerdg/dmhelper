@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<div className='flex flex-col w-full overflow-x-hidden bg-slate-500'>
+				<div className='flex flex-col w-full overflow-x-hidden'>
 					<div className='bg-primary sticky top-0 z-10'>
 						<Navbar />
 					</div>

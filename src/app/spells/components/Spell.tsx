@@ -1,21 +1,34 @@
-import React from "react";
-import { getSpellImg } from "./functions";
+"use client";
+import React, { MouseEventHandler } from "react";
 import Image from "next/image";
+import SpellDetails from "./SpellDetails";
 
 interface Props {
-	index: string;
+	spellIndex: string;
+	spellName: string;
+	spellImg: string;
 }
 
-const Spell = async ({ index }: Props) => {
-	const spellImg = await getSpellImg(index);
+const Spell = ({ spellIndex, spellName, spellImg }: Props) => {
+	function handleClick() {}
 	return (
-		<Image
-			className='rounded-xl m-auto'
-			src={spellImg}
-			width={60}
-			height={60}
-			alt={index}
-		/>
+		<div
+			className='flex flex-col p-4 items-center justify-between w-full h-full cursor-pointer'
+			onClick={(e) => {
+				console.log({ spellName });
+			}}>
+			<Image
+				className='rounded-xl m-auto'
+				src={spellImg}
+				width={60}
+				height={60}
+				alt={spellIndex}
+				id={spellIndex}
+			/>
+			<span className='text-center text-black font-semibold'>
+				{spellName}
+			</span>
+		</div>
 	);
 };
 

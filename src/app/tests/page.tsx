@@ -1,11 +1,22 @@
-import React from "react";
+"use client";
+
+import SpellDetails from "../spells/components/SpellDetails";
+const spellIndex = "1";
+const spellName = "Acid Arrow";
+const spellDetails =
+	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, doloribus dicta. Aliquid similique saepe veniam aspernatur nihil, obcaecati et quam at. Eveniet ad suscipit qui ab. Deleniti commodi corporis quod!";
+const spellImg =
+	"https://raw.githubusercontent.com/linikerdg/spellicons/main/acid-arrow.png";
 
 export default function Tests() {
 	return (
-		<div className='bg-midnight w-screen h-screen p-4'>
-			<h1 className='text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>
-				Eu falei. . . AS SPELLS!!!!!
-			</h1>
+		<div>
+			<SpellDetails
+				spellIndex={spellIndex}
+				spellName={spellName}
+				spellDetails={spellDetails}
+				spellImg={spellImg}
+			/>
 		</div>
 	);
 }
