@@ -13,6 +13,7 @@ export default function Navbar() {
 		{ name: "Home", path: "/" },
 		{ name: "Spells", path: "/spells" },
 		{ name: "Tests", path: "/tests" },
+		{ name: "NPCs", path: "/npcs" },
 	];
 	return (
 		<nav className='bg-white border-gray-200 dark:bg-gray-900'>
