@@ -4,6 +4,10 @@ import { FieldValues, useForm } from "react-hook-form";
 import AtributeBox from "./AtributeBox";
 import { Monster } from "@/components/types";
 
+interface Props {
+	scores: number[];
+}
+
 const NewNPC = () => {
 	const {
 		register,
@@ -16,8 +20,8 @@ const NewNPC = () => {
 		<form>
 			<div className='flex justify-center'>
 				<ul className='abltScores p-2'>
-					<li>
-						<AtributeBox ability='STR' />
+					{/* <li>
+						<AtributeBox ability='STR' score={} />
 					</li>
 					<li>
 						<AtributeBox ability='DEX' />
@@ -33,7 +37,7 @@ const NewNPC = () => {
 					</li>
 					<li>
 						<AtributeBox ability='CHA' />
-					</li>
+					</li> */}
 				</ul>
 			</div>
 		</form>
