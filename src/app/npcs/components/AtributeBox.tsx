@@ -2,10 +2,10 @@ import "./custom.css";
 
 interface Props {
 	ability: string;
+	score: number;
 }
 
-const AtributeBox = ({ ability }: Props) => {
-	let score = 0;
+const AtributeBox = ({ ability, score }: Props) => {
 	let modifier = 0;
 	switch (true) {
 		case score <= 1:
@@ -60,8 +60,11 @@ const AtributeBox = ({ ability }: Props) => {
 	return (
 		<div className='attBox'>
 			<p>{ability}</p>
-			<input type='text' value={score} />
-			<p>{modifier}</p>
+			<input type='text' defaultValue={score} />
+			<p>
+				{modifier > 0 && "+"}
+				{modifier}
+			</p>
 		</div>
 	);
 };

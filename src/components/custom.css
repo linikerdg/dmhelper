@@ -1,0 +1,18 @@
+.accordion-item {
+	@apply hover:bg-yellow-100;
+}
+.isActive {
+	@apply bg-zinc-400;
+}
+.isActive h3 {
+	@apply font-semibold text-lg text-rose-900;
+}
+.isActive p {
+	@apply text-sm;
+}
+ul {
+	@apply pl-4;
+}
+strong {
+	@apply font-semibold;
+}

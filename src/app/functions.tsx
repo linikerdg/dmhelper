@@ -45,13 +45,22 @@ export async function getMonster() {
 		},
 		specialAbilities: monster.special_habilities,
 		actions: monster.actions,
+		// [
+		// 	{
+		// 		name: monster.actions.name,
+		// 		description: monster.actions.desc,
+		// 		difficultyClass: {
+		// 			type: monster.actions.dc, //dc_type
+		// 			value: monster.actions.dc_value, //dc_value
+		// 		},
+		// 		damage: [
+		// 			{
+		// 				type: monster.actions.damage, //.damage_type.index,
+		// 				value: monster.actions.damage, //.damage_dice,
+		// 			},
+		// 		],
+		// 	},
+		// ],
 	};
-	return (
-		<>
-			<p>teste: {monster.ac}</p>
-			<div>
-				<pre>{JSON.stringify(teste, null, 2)}</pre>
-			</div>
-		</>
-	);
+	return teste;
 }

@@ -1,7 +1,7 @@
-export type Dice = {
-	name: string;
-	value: number;
-};
+// export type Dice = {
+// 	name: string;
+// 	value: number;
+// };
 export type AbilityScores = {
 	str: number;
 	dex: number;
@@ -42,21 +42,21 @@ type DC = {
 };
 export type Damage = {
 	type: string;
-	value: { quantity: number; dice: Dice };
+	value: string;
 };
 export type Special = {
 	name: string;
 	description: string;
 	dificultyClass?: DC;
 };
-export type Action = {
-	legendary: boolean;
-	name: string;
-	description: string;
-	effect?: string;
-	difficultyClass?: DC;
-	damage?: Damage;
-};
+// export type Action = {
+// 	legendary?: boolean;
+// 	name: string;
+// 	description: string;
+// 	effect?: string;
+// 	difficultyClass?: DC;
+// 	damage?: Damage[];
+// };
 export type Damages = {
 	vulnerabilities: string[];
 	resistances: string[];
@@ -81,6 +81,6 @@ export type Monster = {
 	languages: string[];
 	challenge: Challenge;
 	specialAbilities: Special[];
-	actions: Action[];
+	actions: [];
 	image?: string;
 };

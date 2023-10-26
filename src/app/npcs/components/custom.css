@@ -1,21 +1,21 @@
 .attBox {
 	@apply flex flex-col items-center;
-	@apply bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900;
+	/* @apply bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900;
 	@apply text-center p-1 rounded w-full;
-	@apply outline outline-yellow-800;
+	@apply outline outline-yellow-800; */
 }
 .attBox p {
-	@apply text-amber-300;
+	@apply text-black;
 	@apply text-xs font-semibold px-1 w-fit z-10;
 }
 .attBox input {
-	@apply text-amber-300;
-	@apply border-t-transparent bg-transparent;
+	@apply text-black w-full;
+	/* @apply border-t-transparent bg-transparent; */
 	@apply outline outline-0 transition-all focus:border-t-transparent focus:outline-0 disabled:border-0;
-	@apply text-2xl font-bold text-center w-16;
+	@apply text-2xl font-bold text-center;
 }
 
 .abltScores {
-	@apply grid grid-cols-3 max-w-fit;
-	@apply sm:grid-cols-6 gap-6;
+	@apply grid grid-cols-3;
+	@apply sm:grid-cols-6 gap-1;
 }
