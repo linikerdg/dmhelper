@@ -14,6 +14,7 @@ export default function Navbar() {
 		{ name: "Spells", path: "/spells" },
 		{ name: "Tests", path: "/tests" },
 		{ name: "NPCs", path: "/npcs" },
+		{ name: "Campaigns", path: "/1/campaigns" },
 	];
 	return (
 		<nav className='bg-white border-gray-200 dark:bg-gray-900'>

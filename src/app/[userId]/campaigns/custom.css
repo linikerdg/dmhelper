@@ -1,0 +1,30 @@
+.btnAdd {
+	@apply h-fit py-1 px-2 font-semibold text-slate-300 bg-slate-800
+    border-2 rounded-lg border-slate-800 shadow-md
+    hover:bg-slate-700;
+}
+.campCard {
+	@apply px-4 py-2 mb-4 mx-4 shadow-md
+    border rounded-md border-slate-800;
+}
+.campCard h2 {
+	@apply text-slate-800;
+}
+.campCard p {
+	@apply font-normal truncate my-2;
+}
+.btn {
+	@apply p-1 bg-slate-300
+    border-2 rounded-lg border-slate-800 shadow-inner
+    hover:bg-slate-100;
+}
+.campData {
+	@apply my-4;
+}
+.campData label {
+	@apply flex flex-col my-2 font-semibold;
+}
+.campData label input,
+textarea {
+	@apply font-normal rounded-sm px-1 bg-slate-200;
+}

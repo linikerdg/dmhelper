@@ -1,0 +1,19 @@
+.accordion {
+	@apply mb-1;
+}
+.accordion-item {
+	@apply p-2 border border-slate-600
+     hover:bg-gray-200;
+}
+.isActive {
+	@apply bg-zinc-300;
+}
+.isActive h3 {
+	@apply font-semibold text-lg text-rose-900;
+}
+.isActive p {
+	@apply text-sm;
+}
+.btn {
+	@apply mb-4;
+}

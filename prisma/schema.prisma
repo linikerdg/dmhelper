@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  username  String
+  password  String
+  name      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Campaign  Campaign[]
+}
+
+model Campaign {
+  user         User           @relation(fields: [userId], references: [id])
+  id           String         @id @default(uuid())
+  relativeId   Int
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  userId       String
+  Section      Section[]
+  Monsters     Monsters[]
+  NPCs         NPCs[]
+  Locations    Locations[]
+  Interactions Interactions[]
+  Players      Players[]
+}
+
+model Section {
+  campaign     Campaign       @relation(fields: [campaignId], references: [id])
+  id           String         @id @default(uuid())
+  relativeId   Int
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  campaignId   String
+  Monsters     Monsters[]
+  NPCs         NPCs[]
+  Locations    Locations[]
+  Interactions Interactions[]
+}
+
+model Players {
+  campaign     Campaign       @relation(fields: [campaignId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  campaignId   String
+  id           String         @id @default(uuid())
+  relativeId   Int
+  name         String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Interactions Interactions[]
+}
+
+model Monsters {
+  campaign     Campaign       @relation(fields: [campaignId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  campaignId   String
+  section      Section        @relation(fields: [sectionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  sectionId    String
+  id           String         @id @default(uuid())
+  relativeId   Int
+  name         String
+  Interactions Interactions[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model NPCs {
+  campaign     Campaign       @relation(fields: [campaignId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  campaignId   String
+  section      Section        @relation(fields: [sectionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  sectionId    String
+  id           String         @id @default(uuid())
+  relativeId   Int
+  name         String
+  Interactions Interactions[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model Locations {
+  campaign     Campaign       @relation(fields: [campaignId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  campaignId   String
+  section      Section        @relation(fields: [sectionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  sectionId    String
+  id           String         @id @default(uuid())
+  relativeId   Int
+  type         String
+  description  String
+  information  String?
+  Interactions Interactions[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model Interactions {
+  campaign    Campaign    @relation(fields: [campaignId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  campaignId  String
+  section     Section     @relation(fields: [sectionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  sectionId   String
+  id          String      @id @default(uuid())
+  relativeId  Int
+  type        String
+  description String
+  information String?
+  players     Players[]
+  monsters    Monsters[]
+  npcs        NPCs[]
+  locations   Locations[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  playersId   String
+  monstersId  String
+  nPCsId      String
+  locationsId String
+}
