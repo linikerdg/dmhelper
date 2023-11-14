@@ -9,7 +9,7 @@ h1 {
 	@apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl;
 }
 h2 {
-	@apply text-3xl font-bold leading-none tracking-tighter text-amber-600;
+	@apply text-3xl font-bold leading-none tracking-tighter text-gray-800;
 }
 p {
 	@apply font-semibold;

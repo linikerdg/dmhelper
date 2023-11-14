@@ -1,7 +1,8 @@
 import "../custom.css";
-import { Monster, NPC, Location, Interaction } from "@/app/types";
+import { Monster, NPC, Location, Interaction } from "@/components/types";
 import CampaignData from "../components/CampaignData";
 import Accordion from "../components/Accordion";
+import ModalNewSection from "../components/newSection";
 
 interface PageProps {
 	params: { id: string };
@@ -39,9 +40,7 @@ export default function Campaign({ params }: PageProps, campaign: Campaign) {
 					error neque itaque vitae tempora harum sapiente nam,
 					asperiores quo at modi accusamus?
 				</Accordion>
-				<button type='button' className='btn'>
-					Add Section
-				</button>
+				<ModalNewSection />
 			</div>
 			<div>
 				<Accordion title='Monsters'>

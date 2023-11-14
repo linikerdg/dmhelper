@@ -84,3 +84,6 @@ export type Monster = {
 	actions: [];
 	image?: string;
 };
+export type NPC = {};
+export type Location = {};
+export type Interaction = {};

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./custom.css";
-import ModalNewCampaign from "./components/ModalNewCampaign";
+import ModalNewCampaign from "./components/newCampaign";
 export default function Campaigns() {
 	const campaigns = [
 		{
@@ -35,7 +35,7 @@ export default function Campaigns() {
 								<p>{camp.desc}</p>
 								<Link
 									className='btn'
-									href={`/campaigns/${camp.id}`}>
+									href={`campaigns/${camp.id}`}>
 									Detalhes
 								</Link>
 							</div>
